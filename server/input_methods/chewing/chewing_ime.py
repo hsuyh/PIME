@@ -485,7 +485,7 @@ class ChewingTextService(TextService):
             # 更新編輯區內容 (composition string)
             self.setCompositionString(compStr)
             # 更新輸入游標位置
-            self.setCompositionCursor(chewingContext.cursor_Current())
+            #self.setCompositionCursor(chewingContext.cursor_Current())
 
             # 顯示額外提示訊息 (例如：Ctrl+數字加入自訂詞之後，會顯示提示)
             if chewingContext.aux_Check():
