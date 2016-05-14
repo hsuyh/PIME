@@ -24,7 +24,8 @@ from .chewing_config import chewingConfig
 import opencc  # OpenCC 繁體簡體中文轉換
 import sys
 from ctypes import windll  # for ShellExecuteW()
-
+import time
+import winsound
 
 # from libchewing/include/global.h
 CHINESE_MODE = 1
@@ -481,6 +482,11 @@ class ChewingTextService(TextService):
                 # 把輸入到一半，還沒組成字的注音字串，也插入到編輯區內
                 pos = chewingContext.cursor_Current()
                 compStr = compStr[:pos] + bopomofoStr + compStr[pos:]
+                
+            if not chewingContext.bopomofo_Check() and not chewingContext.commit_Check():
+                    if not chewingContext.buffer_Check():
+                        if keyEvent.keyCode != VK_BACK:
+                            winsound.PlaySound('alert', winsound.SND_ASYNC)
 
             # 更新編輯區內容 (composition string)
             self.setCompositionString(compStr)
