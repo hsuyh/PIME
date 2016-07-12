@@ -27,6 +27,11 @@ from ctypes import windll  # for ShellExecuteW()
 import time
 import winsound
 
+# test 1
+# test 2
+# test 3
+# testtesttest
+
 # from libchewing/include/global.h
 CHINESE_MODE = 1
 ENGLISH_MODE = 0
@@ -482,7 +487,7 @@ class ChewingTextService(TextService):
                 # 把輸入到一半，還沒組成字的注音字串，也插入到編輯區內
                 pos = chewingContext.cursor_Current()
                 compStr = compStr[:pos] + bopomofoStr + compStr[pos:]
-                
+
             if not chewingContext.bopomofo_Check() and not chewingContext.commit_Check():
                     if not chewingContext.buffer_Check():
                         if keyEvent.keyCode != VK_BACK:
