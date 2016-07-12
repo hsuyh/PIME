@@ -15,6 +15,9 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
+#123
+
+
 from keycodes import * # for VK_XXX constants
 from textService import *
 import os.path
@@ -482,7 +485,7 @@ class ChewingTextService(TextService):
                 # 把輸入到一半，還沒組成字的注音字串，也插入到編輯區內
                 pos = chewingContext.cursor_Current()
                 compStr = compStr[:pos] + bopomofoStr + compStr[pos:]
-                
+
             if not chewingContext.bopomofo_Check() and not chewingContext.commit_Check():
                     if not chewingContext.buffer_Check():
                         if keyEvent.keyCode != VK_BACK:
