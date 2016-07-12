@@ -31,6 +31,7 @@ import winsound
 # test 2
 # test 3 test3
 #test 4
+# test 5
 
 # from libchewing/include/global.h
 CHINESE_MODE = 1
