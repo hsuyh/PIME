@@ -29,7 +29,7 @@ import winsound
 
 # test 1
 # test 2
-# test 3
+# test 3 test3
 
 
 # from libchewing/include/global.h
